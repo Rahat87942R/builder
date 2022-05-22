@@ -17,13 +17,13 @@
 #
 
 # User
-GIT_USER="GeoPD"
+GIT_USER="Mishrahpp"
 
 # Email
-GIT_EMAIL="geoemmanuelpd2001@gmail.com"
+GIT_EMAIL="mishrahpp2005@gmail.com"
 
 # Local manifest
-LOCAL_MANIFEST=https://${TOKEN}@github.com/geopd/local_manifests
+LOCAL_MANIFEST=https://${TOKEN}@github.com/Mishrahpp/local_manifests
 
 # ROM Manifest and Branch
 rom() {
@@ -47,15 +47,15 @@ rom() {
 # Build command for rom
 build_command() {
 	case "${NAME}" in
-		"AOSPA-12") lunch aospa_sakura-user && m otapackage -j20
+		"AOSPA-12") lunch aospa_spes-user && m otapackage -j20
 		;;
-		"AEX-12") lunch aosp_sakura-user && m aex -j20
+		"AEX-12") lunch aosp_spes-user && m aex -j20
 		;;
-		"Crdroid-12") lunch lineage_sakura-user && m bacon -j20
+		"Crdroid-12") lunch lineage_spes-user && m bacon -j20
 		;;
-		"dot12.1") lunch dot_sakura-user && m bacon -j20
+		"dot12.1") lunch dot_spes-user && m bacon -j20
 		;;
-		"Evox-12") lunch evolution_sakura-user && m evolution -j20
+		"Evox-12") lunch evolution_spes-user && m evolution -j20
 		;;
 		*) echo "Build commands need to be added!"
 		exit 1
@@ -66,9 +66,9 @@ build_command() {
 # Export tree paths
 tree_path() {
 	# Device,vendor & kernel Tree paths
-	DEVICE_TREE=device/xiaomi/sakura
-	VENDOR_TREE=vendor/xiaomi
-	KERNEL_TREE=kernel/xiaomi/msm8953
+	DEVICE_TREE=device/xiaomi/spes
+	VENDOR_TREE=vendor/xiaomi/spes
+	KERNEL_TREE=kernel/xiaomi/spes
 }
 
 # Build post-gen variables (optional)
@@ -83,10 +83,10 @@ lazy_build_post_var() {
 }
 
 # Clone needed misc scripts and ssh priv keys (optional)
-clone_file() {
-	rclone copy brrbrr:scripts/setup_script.sh /tmp/rom
-	rclone copy brrbrr:ssh/ssh_ci /tmp/rom
-}
+#clone_file() {
+#	rclone copy brrbrr:scripts/setup_script.sh /tmp/rom
+#	rclone copy brrbrr:ssh/ssh_ci /tmp/rom
+#}
 
 # Setup build dir
 build_dir() {
@@ -105,12 +105,12 @@ git_setup() {
 }
 
 # SSH configuration using priv key
-ssh_authenticate() {
-	sudo chmod 0600 /tmp/rom/ssh_ci
-	sudo mkdir ~/.ssh && sudo chmod 0700 ~/.ssh
-	eval `ssh-agent -s` && ssh-add /tmp/rom/ssh_ci
-	ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-}
+#ssh_authenticate() {
+#	sudo chmod 0600 /tmp/rom/ssh_ci
+#	sudo mkdir ~/.ssh && sudo chmod 0700 ~/.ssh
+#	eval `ssh-agent -s` && ssh-add /tmp/rom/ssh_ci
+#	ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+#}
 
 # Repo sync and additional configurations
 build_configuration() {
@@ -147,7 +147,7 @@ ccache_configuration() {
 	export CCACHE_DEPEND=true
 	export CCACHE_FILECLONE=true
 	export CCACHE_LIMIT_MULTIPLE=0.9
-	export CCACHE_MAXSIZE=10G
+	export CCACHE_MAXSIZE=50G
 	export CCACHE_NOCOMPRESS=true
 	export CCACHE_NOHASHDIR=1
 	ccache -z
