@@ -1,5 +1,5 @@
 FROM ubuntu:jammy
-LABEL maintainer="GeoPD <geoemmanuelpd2001@gmail.com>"
+LABEL maintainer="Mishrahpp <mishrahpp2005@gmail.com>"
 ENV DEBIAN_FRONTEND noninteractive
 
 WORKDIR /tmp
