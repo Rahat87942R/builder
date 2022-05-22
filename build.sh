@@ -290,7 +290,7 @@ lazy_build_post() {
 # Post Build finished with Time,duration,md5,size&Tdrive link OR post build_error&trimmed build.log in TG
 telegram_post(){
 	if [ -f $(pwd)/out/target/product/${T_DEVICE}/${ZIPNAME} ]; then
-		rclone copy ${ZIP} brrbrr:rom -P
+		rclone copy ${ZIP} spes:rom -P
 		DWD=${TDRIVE}${ZIPNAME}
 		if [[ $GIT_USER = GeoPD && $LAZY_BUILD_POST = true ]]; then
 			lazy_build_post
