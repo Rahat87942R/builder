@@ -51,7 +51,7 @@ build_command() {
 		;;
 		"AEX-12") lunch aosp_spes-user && m aex -j20
 		;;
-		"Crdroid-12") lunch lineage_spes-user && m bacon -j20
+		"Crdroid-12") lunch lineage_spes-user && mma -j20
 		;;
 		"dot12.1") lunch dot_spes-user && m bacon -j20
 		;;
