@@ -28,7 +28,7 @@ LOCAL_MANIFEST=https://${TOKEN}@github.com/Mishrahpp/local_manifests
 # ROM Manifest and Branch
 rom() {
 	case "${NAME}" in
-		"AOSPA-12") MANIFEST=https://github.com/AOSPA/manifest.git BRANCH=sapphire
+		"Pixel-Experience) MANIFEST=https://github.com/PixelExperience/manifest.git BRANCH=twelve-plus
 		;;
 		"AEX-12") MANIFEST=https://github.com/AospExtended/manifest.git BRANCH=12.1.x
 		;;
@@ -47,7 +47,7 @@ rom() {
 # Build command for rom
 build_command() {
 	case "${NAME}" in
-		"AOSPA-12") lunch aospa_spes-user && m otapackage -j20
+		"Pixel-Experience") lunch aosp_spes-user && m bacon -j20
 		;;
 		"AEX-12") lunch aosp_spes-user && m aex -j20
 		;;
