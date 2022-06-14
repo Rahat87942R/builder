@@ -28,7 +28,7 @@ LOCAL_MANIFEST=https://${TOKEN}@github.com/Mishrahpp/local_manifests
 # ROM Manifest and Branch
 rom() {
 	case "${NAME}" in
-		"Pixel-Experience) MANIFEST=https://github.com/PixelExperience/manifest.git BRANCH=twelve-plus
+		"Pixel-Experience") MANIFEST=https://github.com/PixelExperience/manifest.git BRANCH=twelve-plus
 		;;
 		"AEX-12") MANIFEST=https://github.com/AospExtended/manifest.git BRANCH=12.1.x
 		;;
